@@ -1,4 +1,4 @@
-Obecenie jednym z podstawowych elementów zarządzania wszelkiego typu projektami jest proces harmonogramowania. Pod
+Obecnie jednym z podstawowych elementów zarządzania wszelkiego typu projektami jest proces harmonogramowania. Pod
 "wszelkiego typu" możemy rozumieć niemalże każde przedśiewzięcie - inżyniera, sektor IT, inwestycje, przemysł transportowy
 , budowlany itp. Za terminem harmonogramownia stoi nic innego jak planowanie najbardziej optymalnej sekwencji operacji
 oraz zminimalizownie czasu wykonania tychże sekwencji. Określamy skończone ramy czasowe wykonania danych zadań oraz
