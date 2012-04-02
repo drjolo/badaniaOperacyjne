@@ -1,0 +1,25 @@
+Problem komiwojażera (bądź jak ktoś woli TSP - travelling salesman problem) jest jednym z najstarszych - a przynajmniej
+jednym z najbardziej popularnych problemów optymalizacyjnych. Zapewne wiele osób z tym problemem już się spotkało i wie,
+że jest związany z teorią grafów. Ściślej rzecz ujmując sprowadza się do znalezienia cyklu Hamiltona w grafie pełnym
+(graf musi być pełny, aby istniało rozwiązanie).
+
+Kilka słów wyjaśnień:
+
+Graf pełny - jest to graf w którym dla każdej pary wierzchołków istnieje krawędź je łącząca.
+             W przypadku grafu pełnego o n wierzchołkach wiadomo, iż posiada dokładnie n(n-1)/2 krawędzi.
+
+Cykl Hamiltona - jest to taki cykl, który zawiera każdy wierzchołek danego grafu dokładnie 1 raz (prócz pierwszego
+                 wierzchołka, ponieważ w nim rozpoczyna się i kończy cykl).
+
+Dodatkowo wiadomo, krawędziom grafu można nadawać różne wagi. 
+
+Wracając do problemu: dane jest n miast oraz odległość/koszt podróży/czas podróży między nimi. Nasz strudzony 
+komiwojażer musi odwiedzić wszystkie te miasta w celu dostarczenia przesyłek (cokolwiek stanowią) jednak z zachowaniem
+zminimalizowanych kosztów. W zależności od problemu celem może być znalezienie najkrótszej/najtańszej/najszybszej trasy.
+Warunek jest taki, że każdą miejscowość ma odwiedzić dokładnie 1 raz po czym ma wrócić do miejscowości w której "wojaże"
+rozpoczął.
+
+W odniesieniu do teorii grafów:
+- wierzchołek grafu reprezentuje jedno miasto;
+- krawędź reprezentuje drogę łączącą miasta;
+- jako, że istnieją pewne kryteria (odległość/koszt/czas), krawędzie grafu mają przyporządkowane odpowiednie wagi.

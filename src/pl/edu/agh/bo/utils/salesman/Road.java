@@ -5,7 +5,8 @@ import java.util.List;
 
 /**
  * @author marpiech
- * TODO: (bblazewicz) dopisac sie do listy autorow
+ * @author bblazewicz
+ * 
  */
 public class Road {
 	List<Point> points;
@@ -25,8 +26,11 @@ public class Road {
 	}
 
 	public Double distance() {
-		// TODO: (bblazewicz) zaimplementowac obliczanie dlugosci drogi
-		return 1.0;
+		double distance = 0;
+		for (int i=0; i < this.points.size(); i++) {
+			distance += Math.pow(Math.pow(this.points.get(i).getX() - this.points.get(i+1).getX(), 2) + Math.pow(this.points.get(i).getY() - this.points.get(i+1).getY(), 2), 0.5);
+		}
+		return distance;
 	}
 	
 }

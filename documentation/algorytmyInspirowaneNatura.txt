@@ -1,0 +1,7 @@
+Algorytmy inspirowane natur¹ w ostatnich latach zyska³y du¿¹ popularnoœæ ze wzglêdu na fakt, 
+¿e wiele rzeczywistych problemów optymalizacyjnych sta³y siê bardziej dynamiczne oraz z³o¿one. 
+Rozmiar i z³o¿onoœæ problemów w dzisiejszych czasach wymaga rozwoju wielu metod, 
+których efektywnoœæ jest mierzona na podstawie zdolnoœci do znalezienia zadowalaj¹cych wyników w rozs¹dnym czasie,
+ a nie tylko do zagwarantowania optymalnego rozwi¹zania. Celem naukowców sta³a siê wiêc obserwacja natury, 
+ próba zrozumienia efektywnych algorytmów wykorzystywanych przez inne organizmy ¿ywe. 
+ Przeniesienie tej wiedzy i dopasowanie rozwi¹zañ na grunt informatyki - specjaliœci oczekuj¹ uzyskania jak najlepszych rezultatów.
