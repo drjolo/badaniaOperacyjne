@@ -1,7 +1,7 @@
 53.133	32.150	Bialystok
 53.150	18.000	Bydgoszcz
 54.350	18.667	Gdansk
-/*52.733	15.233	Gorzow Wielkopolski*/
+52.733	15.233	Gorzow Wielkopolski
 50.267	19.017	Katowice
 50.833	20.667	Kielce
 50.083	19.917	Krakow
@@ -12,7 +12,7 @@
 52.417	16.967	Poznan
 50.050	22.000	Rzeszow
 53.417	14.583	Szczecin
-/*53.033	18.600	Torun*/
+53.033	18.600	Torun
 52.250	21.000	Warszawa
 51.100	17.033	Wroclaw
 51.933	15.500	Zielona Gora

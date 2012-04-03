@@ -13,7 +13,7 @@ import pl.edu.agh.bo.utils.salesman.Road;
 public class SalesmanPanel extends JPanel {
 	Road road;
 	public SalesmanPanel () {
-		road = new Road();
+		road = new Road("resources/mapaPolski.txt");
 		//TODO: (pietrekder) umiescic w tym panelu obrazek wizualizujacy droge
 		this.add(new JLabel("Tu powinna byc grafika dla komiwojazera"));
 	}
