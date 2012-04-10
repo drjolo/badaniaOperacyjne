@@ -5,7 +5,7 @@
 50.120	8.680	Frankfurt
 51.510	7.480	Dortmund
 48.790	9.190	Stuttgart
-51.470	7.000	¿ywnoœæ
+51.470	7.000	Essen
 51.240	6.790	Dusseldorf
 53.080	8.810	Brema
 52.400	9.730	Hanower
@@ -28,8 +28,8 @@
 50.770	6.090	Aachen
 52.270	10.510	Brunswick
 51.330	6.550	Krefeld
-51.480	11.960	sala
-54.320	10.120	kil
+51.480	11.960	Halle
+54.320	10.120	Kilonia
 52.130	11.620	Magdeburg
 51.470	6.860	Oberhausen
 53.870	10.660	Lubeka
