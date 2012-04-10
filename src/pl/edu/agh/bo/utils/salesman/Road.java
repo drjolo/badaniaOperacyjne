@@ -52,11 +52,16 @@ public class Road {
 								  new FileInputStream(file))));
 		  String strLine;
 		  Integer orderCounter = 0;
-		  // TODO: (pigmaster) uodpornic tą funckje na dziwne przypadki, typu pusta linia, nowe znaki
+		  // TODO: (pigmaster) uodpornic tą funckje na dziwne przypadki, typu nowe znaki
 		  while ((strLine = br.readLine()) != null)   {
-			  String[] split = strLine.split("\t");
-			  points.add(new Point(new Double(split[0]), new Double(split[1]), split[2]));
-			  order.add(orderCounter++);
+			  if (strLine.trim().length()==0){
+				  continue;
+			  }
+			  else{
+				  String[] split = strLine.split("\t");
+				  points.add(new Point(new Double(split[0]), new Double(split[1]), split[2]));
+				  order.add(orderCounter++);
+			  }
 		  }
 		  br.close();
 		  		
