@@ -6,7 +6,7 @@ import javax.swing.JFrame;
 import pl.edu.agh.bo.ui.scheduler.SchedulerPanel;
 import pl.edu.agh.bo.utils.scheduler.Schedule;
 
-@SuppressWarnings("serial")
+@SuppressWarnings({ "serial", "unused" })
 public class UiScheduler extends JFrame{
 	@SuppressWarnings("deprecation")
 	public UiScheduler() {
