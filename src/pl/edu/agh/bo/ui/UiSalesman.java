@@ -1,18 +1,20 @@
 package pl.edu.agh.bo.ui;
 
+import java.awt.Dimension;
+
 import javax.swing.*;
 
 import pl.edu.agh.bo.ui.salesman.SalesmanPanel;
 
 @SuppressWarnings("serial")
-public class UiBinder extends JFrame{
+public class UiSalesman extends JFrame{
 	@SuppressWarnings("deprecation")
-	public UiBinder() {
+	public UiSalesman() {
 		super("Cocroach Swarm Algorithm");
 		this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		this.add(new SalesmanPanel());
 		this.pack();
-		this.resize(600, 300);
+		this.setPreferredSize(new Dimension(600, 600));
 		this.setVisible(true);
 	}
 }

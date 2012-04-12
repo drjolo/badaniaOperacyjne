@@ -104,5 +104,7 @@ public class CockroachSwarm {
 		LOFVal = eval.evaluate(localOptimalFood);
 		logger.info("New optimum: " + LOFVal + " " + food);
 	}
-	
+	public PermutationVector getSolution() {
+		return localOptimalFood;
+	}
 }
