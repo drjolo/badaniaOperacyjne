@@ -14,7 +14,7 @@ public class UiScheduler extends JFrame{
 		this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		this.add(new SchedulerPanel());
 		this.pack();
-		this.resize(600, 300);
+		this.resize(600, 600);
 		this.setVisible(true);
 	}
 }
