@@ -3,6 +3,9 @@ package pl.edu.agh.bo.utils.scheduler;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.log4j.Logger;
+
+import pl.edu.agh.bo.TestScheduler;
 import pl.edu.agh.bo.cockroach.Evaluatable;
 import pl.edu.agh.bo.cockroach.PermutationVector;
 
@@ -10,11 +13,12 @@ public class Schedule implements Evaluatable {
 	List <Item> items;
 	List <Integer> order;
 	List <Integer> machineCount;
+	private static final Logger logger = Logger.getLogger(Schedule.class);
 	
-	public Schedule() {
-		this.items = new ArrayList<Item>();
-		this.order = new ArrayList<Integer>();
-		this.machineCount = new ArrayList<Integer>();
+	public Schedule(List<Item> items, List <Integer> machineCount) {
+		this.items = items;
+		this.order = new PermutationVector(items.size()).getPermutation();
+		this.machineCount = machineCount;
 	}
 	
 	private Double process() throws ItemProblemException {
@@ -26,9 +30,12 @@ public class Schedule implements Evaluatable {
 				currentItem++;
 				items.get(order.get(currentItem)).run();
 			}
-			increment(getIncrementTime());
+			Double incrementTime = getIncrementTime();
+			logger.debug("INC: " + incrementTime);
+			processingTime += incrementTime;
+			increment(incrementTime);
 		}
-		return null;
+		return processingTime;
 	}
 	
 	void increment(double time) {

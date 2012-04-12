@@ -78,8 +78,22 @@ public class PermutationVector {
 		}
 		if(isDifferent) {
 			int positionToSwap = positionOfDifference;
-			while(permutation.get(positionToSwap) != target.getPermutation().get(positionOfDifference) && positionToSwap < permutation.size()) {
-				positionToSwap++;
+//			if (positionToSwap >= permutation.size())
+//				logger.trace("WARNING!");
+//			while(positionToSwap < permutation.size() && permutation.get(positionToSwap) != target.getPermutation().get(positionOfDifference)) {
+//				positionToSwap++;
+//			}
+//			if (positionToSwap >= permutation.size()) {
+//				logger.trace("WARNING!: " +  positionOfDifference + " " + permutation.get(0) + ":" + target.getPermutation().get(positionOfDifference));
+//				logger.trace("WARNING!: " + permutation.size() + ":" + target.getPermutation().size());
+			for(int i = 0; i < permutation.size(); i++) {
+				int x1 = target.getPermutation().get(i);
+				int x2 = permutation.get(positionOfDifference);
+				if (x1 == x2) {
+					positionToSwap = i;
+					//logger.trace("WARNING!: " + "FOUND!" + i + " " + target.getPermutation().get(i) + " " + permutation.get(positionOfDifference));
+					//logger.trace("WARNING!: " + "FOUND!" + i + " " + x1 + " " + x2);
+				}
 			}
 			this.swap(positionOfDifference, positionToSwap);
 		}

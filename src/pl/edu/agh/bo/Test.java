@@ -56,7 +56,7 @@ public class Test extends TestCase {
 		logger.trace("Road: " + road);
 		TravellingSalesman tso = new TravellingSalesman(road);
 		CockroachSwarm tsoCockroach = new CockroachSwarm(20, 10, tso, 3);
-		tsoCockroach.run(10000);
+		tsoCockroach.run(100);
 		road.setOrder(tsoCockroach.getSolution().getPermutation());
 		logger.trace("Road: " + road);
 	}

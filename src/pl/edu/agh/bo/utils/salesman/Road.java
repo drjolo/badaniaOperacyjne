@@ -85,4 +85,34 @@ public class Road {
 	public int getSize() {
 		return this.points.size();
 	}
+	
+	public Extremes getExtremes() {
+		Extremes extremes = new Extremes();
+		for(Point point : points) {
+			if(extremes.getMinx() == null) {
+				extremes.setMinx(point.x);
+				extremes.setMaxx(point.x);
+				extremes.setMiny(point.y);
+				extremes.setMaxy(point.y);
+			}
+			if (point.x < extremes.getMinx())
+				extremes.setMinx(point.x);
+			if (point.x > extremes.getMaxx())
+				extremes.setMaxx(point.x);
+			if (point.y < extremes.getMiny())
+				extremes.setMiny(point.y);
+			if (point.y > extremes.getMaxy())
+				extremes.setMaxy(point.y);
+		}
+		return extremes;
+	}
+
+	public List<Point> getPoints() {
+		return points;
+	}
+
+	public List<Integer> getOrder() {
+		return order;
+	}
+	
 }
