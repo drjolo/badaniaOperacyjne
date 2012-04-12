@@ -30,10 +30,10 @@ public class SalesmanPanel extends JPanel {
 	int height = 400;
 	
 	public SalesmanPanel () {
-		this.road = new Road("resources/mapaNiemiec.txt");
+		this.road = new Road("resources/mapaPolski.txt");
 		TravellingSalesman tso = new TravellingSalesman(road);
 		CockroachSwarm tsoCockroach = new CockroachSwarm(100, 4, tso, 1);
-		tsoCockroach.run(500);
+		tsoCockroach.run(100);
 		road.setOrder(tsoCockroach.getSolution().getPermutation());
 		extremes = road.getExtremes();
 		setPreferredSize(new Dimension(width, height));
