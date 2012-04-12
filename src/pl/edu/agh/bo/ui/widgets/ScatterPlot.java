@@ -14,4 +14,5 @@ public class ScatterPlot extends JPanel {
 	public void setPoints(List <GraphPoint> points) {
 		
 	}
+	
 }

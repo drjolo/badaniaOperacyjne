@@ -13,8 +13,8 @@ public class Run {
 		PropertyConfigurator.configure("lib/log4j.properties");
 		SwingUtilities.invokeLater(new Runnable() {
 			public void run() {
-				@SuppressWarnings("unused")
-				UiSalesman ui = new UiSalesman();
+				//@SuppressWarnings("unused")
+				//UiSalesman ui = new UiSalesman();
 				@SuppressWarnings("unused")
 				UiScheduler ui2 = new UiScheduler();
 				
