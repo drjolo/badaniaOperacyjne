@@ -1,10 +1,12 @@
 package pl.edu.agh.bo;
 
+
 import javax.swing.SwingUtilities;
 
 import org.apache.log4j.PropertyConfigurator;
 
-import pl.edu.agh.bo.ui.UiBinder;
+import pl.edu.agh.bo.ui.UiSalesman;
+import pl.edu.agh.bo.ui.UiScheduler;
 
 public class Run {
 	public static void main(String[] args) {
@@ -12,7 +14,10 @@ public class Run {
 		SwingUtilities.invokeLater(new Runnable() {
 			public void run() {
 				@SuppressWarnings("unused")
-				UiBinder ui = new UiBinder();
+				UiSalesman ui = new UiSalesman();
+				@SuppressWarnings("unused")
+				UiScheduler ui2 = new UiScheduler();
+				
 			}
 		});
 	}
