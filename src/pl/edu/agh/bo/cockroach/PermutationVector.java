@@ -71,38 +71,46 @@ public class PermutationVector {
 		boolean isDifferent = false;
 		int positionOfDifference = 0;
 		while(!isDifferent && positionOfDifference < permutation.size()) {
-			if(permutation.get(positionOfDifference) == target.getPermutation().get(positionOfDifference))
+			if(permutation.get(positionOfDifference).equals(target.getPermutation().get(positionOfDifference)))
 				positionOfDifference++;
 			else
 				isDifferent = true;
 		}
+		//logger.trace("CrawlTo:" + positionOfDifference);
 		if(isDifferent) {
 			int positionToSwap = positionOfDifference;
-//			if (positionToSwap >= permutation.size())
-//				logger.trace("WARNING!");
-//			while(positionToSwap < permutation.size() && permutation.get(positionToSwap) != target.getPermutation().get(positionOfDifference)) {
-//				positionToSwap++;
-//			}
+			while(positionToSwap < permutation.size() && !permutation.get(positionToSwap).equals(target.getPermutation().get(positionOfDifference))) {
+				positionToSwap++;
+			}
 //			if (positionToSwap >= permutation.size()) {
 //				logger.trace("WARNING!: " +  positionOfDifference + " " + permutation.get(0) + ":" + target.getPermutation().get(positionOfDifference));
 //				logger.trace("WARNING!: " + permutation.size() + ":" + target.getPermutation().size());
-			for(int i = 0; i < permutation.size(); i++) {
-				int x1 = target.getPermutation().get(i);
-				int x2 = permutation.get(positionOfDifference);
-				if (x1 == x2) {
-					positionToSwap = i;
-					//logger.trace("WARNING!: " + "FOUND!" + i + " " + target.getPermutation().get(i) + " " + permutation.get(positionOfDifference));
-					//logger.trace("WARNING!: " + "FOUND!" + i + " " + x1 + " " + x2);
-				}
-			}
+//			
+//			for(int i = 0; i < permutation.size(); i++) {
+//				//int x1 = target.getPermutation().get(i);
+//				//int x2 = permutation.get(positionOfDifference);
+//				int x1 = permutation.get(i);
+//				int x2 = target.getPermutation().get(positionOfDifference);		
+//				if (x1 == x2) {
+//					positionToSwap = i;
+//					
+//					//logger.trace("WARNING!: " + "FOUND!" + i + " " + target.getPermutation().get(i) + " " + permutation.get(positionOfDifference));
+//					//logger.trace("WARNING!: " + "FOUND!" + i + " " + x1 + " " + x2);
+//				}
+//			}
+			//logger.trace("One: " + permutation.get(positionOfDifference) + " " + target.getPermutation().get(positionOfDifference));
 			this.swap(positionOfDifference, positionToSwap);
+			//logger.trace("Two: " + permutation.get(positionOfDifference) + " " + target.getPermutation().get(positionOfDifference));
+			//logger.trace("Three: " + (permutation.get(positionOfDifference).equals(target.getPermutation().get(positionOfDifference))));
 		}
 		return isDifferent;
 	}
 	
 	public void nRStep(int n) {
+		n = (int) Math.floor(Math.random() * n) + 1;
+		int stochasticX = (int) Math.floor(Math.random() * (permutation.size()));
 		for(int i = 1; i <= n; i++) {
-			int stochasticX = (int) Math.floor(Math.random() * (permutation.size()));
+			
 			int stochasticY = (int) Math.floor(Math.random() * (permutation.size()));
 			if(permutation.size() > 1)
 				if(stochasticX == stochasticY)
@@ -111,6 +119,21 @@ public class PermutationVector {
 					this.swap(stochasticX, stochasticY);
 		}
 	}
+	
+	public void localNRStep(int n, int dist) {
+		n = (int) Math.floor(Math.random() * n) + 1;
+		int stochasticX = (int) Math.floor(Math.random() * (permutation.size()));
+		for(int i = 1; i <= n; i++) {
+			int stochasticY = -1;
+			while (stochasticY < 0 || stochasticY >= permutation.size())
+				stochasticY = stochasticX + (int) (Math.floor(Math.random() * dist) - (dist / 2));
+			if(permutation.size() > 1)
+				if(stochasticX == stochasticY)
+					i--;
+				else
+					this.swap(stochasticX, stochasticY);
+		}
+	}	
 	
 	public PermutationVector copy() {
 		PermutationVector newVector = new PermutationVector(0);

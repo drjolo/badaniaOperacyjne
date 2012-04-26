@@ -15,8 +15,8 @@ public class Run {
 			public void run() {
 				@SuppressWarnings("unused")
 				UiSalesman ui = new UiSalesman();
-				@SuppressWarnings("unused")
-				UiScheduler ui2 = new UiScheduler();
+				//@SuppressWarnings("unused")
+				//UiScheduler ui2 = new UiScheduler();
 				
 			}
 		});

@@ -32,6 +32,7 @@ public class CockroachSwarm {
 	private Evaluatable eval;
 	
 	private int splitDistance;
+	private boolean randomNest = true;
 	
 	private static final Logger logger = Logger.getLogger(CockroachSwarm.class);
 	
@@ -41,12 +42,21 @@ public class CockroachSwarm {
 		this.stepOne(populationSize, foodSize);
 	}
 	
+	public CockroachSwarm (int populationSize, int foodSize, Evaluatable eval, int splitDistance, boolean randomNest) {
+		this.eval = eval;
+		this.splitDistance = splitDistance;
+		this.randomNest = randomNest;
+		this.stepOne(populationSize, foodSize);
+	}	
+	
 	public void run(int iterations) {
 		logger.info("Iteration: 0, Val: " + LOFVal + ", " + localOptimalFood.toString());
 		for(int i = 1; i <= iterations; i++) {
 			stepTwo();
 			stepThree();
-			logger.info("Iteration: " + i + ", Val: " + LOFVal + ", " + localOptimalFood.toString());
+			foodSplitting();
+			//logger.info("Iteration: " + i + ", Val: " + LOFVal + ", " + localOptimalFood.toString());
+			logger.info("Iteration: " + i + ", Val: " + LOFVal);
 		}
 	}
 	
@@ -71,7 +81,10 @@ public class CockroachSwarm {
 					compareAndSetLOF(cockroaches.get(cockroachIndex));
 					isCrawling = cockroaches.get(cockroachIndex).crawlTo(foods.get(foodIndex));
 				}
-				cockroaches.get(cockroachIndex).permute();
+				if (randomNest)
+					cockroaches.get(cockroachIndex).permute();
+				else
+					cockroaches.get(cockroachIndex).localNRStep(splitDistance, 10);
 			}
 		}
 	}
@@ -83,12 +96,15 @@ public class CockroachSwarm {
 				compareAndSetLOF(cockroaches.get(cockroachIndex));
 				isCrawling = cockroaches.get(cockroachIndex).crawlTo(localOptimalFood);
 			}
-			cockroaches.get(cockroachIndex).permute();			
+			if (randomNest)
+				cockroaches.get(cockroachIndex).permute();
+			else
+				cockroaches.get(cockroachIndex).nRStep(splitDistance);
 		}
 	}
 	
 	private void foodSplitting() {
-		for(int foodIndex = 1; foodIndex <= foods.size(); foodIndex++) {
+		for(int foodIndex = 0; foodIndex < foods.size(); foodIndex++) {
 			foods.get(foodIndex).inject(localOptimalFood);
 			foods.get(foodIndex).nRStep(splitDistance);
 		}
@@ -102,7 +118,7 @@ public class CockroachSwarm {
 	private void setNewLocalOptimalFood(PermutationVector food) {
 		localOptimalFood = food.copy();
 		LOFVal = eval.evaluate(localOptimalFood);
-		logger.info("New optimum: " + LOFVal + " " + food);
+		logger.info("New optimum: " + LOFVal);
 	}
 	public PermutationVector getSolution() {
 		return localOptimalFood;
