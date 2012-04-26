@@ -1,0 +1,72 @@
+\documentclass[a4paper]{article}
+ 
+\usepackage{polski}
+\usepackage[utf8]{inputenc} 
+\usepackage[pdftex]{graphicx}
+\usepackage[left=2.5cm,top=2.5cm,right=2.5cm,bottom=2.5cm,nohead,nofoot]{geometry}
+\usepackage{fancyhdr}
+\usepackage{indentfirst} 
+
+\renewcommand{\maketitle}{
+\begin{titlepage}
+\begin{center}
+\huge
+\textbf{Akademia Górniczo-Hutnicza}\\
+\Large
+Wydzial Elektrotechniki, Automatyki, Informatyki i Elektroniki\\
+\vspace*{0.4cm}
+Katedra Informatyki
+\vspace*{0.2cm}
+\end{center}
+\begin{figure}[!ht]
+\centering
+\includegraphics[scale=0.5]{Grafika/agh-logo.png}
+\end{figure}
+\vspace*{0.1cm}
+\begin{center}
+\LARGE
+\textbf {Implementacja algorytmu karalucha}\\
+zastosowanie algorytmu do rozwiązywania zagadnień optymalizacji kombinatorycznej\\
+\vspace*{0.8cm}
+\begin{table}[!htp]
+\hspace*{0.45cm}
+\begin{tabular}{p{3cm}p{9cm}}
+\textit{Autorzy:}& \parbox{4cm} {\textbf {Łukasz Adamczyk\\Piotr Adamczyk\\Bartosz Błażewicz\\Mariusz Cybula\\Piotr Dereszowski\\Dawid Marszałek\\Marcin Piechota\\Jakub Warzocha\\Joanna Wojtas\\Rafał Szczodruch\\Kamil Nowak}}\\
+\\
+\textit{Kierunek studiów:} &\textbf {Informatyka, II rok} \\
+\end{tabular}
+\end{table}
+\vspace{0.5cm}
+\center{\small Kraków 2012}
+\end{center}
+\end{titlepage}
+}
+
+\begin{document}
+\maketitle
+\tableofcontents
+\newpage
+
+\section{Informacje ogólne}
+
+\subsection{Wprowadzenie - Algorytmy inspirowane naturą}
+\input{algorytmyinspirowanenatura.tex}
+
+\subsection{Karaluch - co o nim wiemy}
+\input{wprowadzenie.tex}
+
+\subsection{Problem Harmonogramowania}
+\input{problemharmonogramowania.tex}
+
+\subsection{Problem komiwojazera}
+\input{problemkomiwojazera.tex}
+
+
+
+
+
+
+
+
+
+\end{document}
