@@ -3,9 +3,7 @@ package pl.edu.agh.bo.ui.salesman;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
-import java.awt.geom.Ellipse2D;
 import java.awt.geom.Line2D;
-import java.awt.geom.Rectangle2D;
 import javax.swing.JPanel;
 
 import pl.edu.agh.bo.cockroach.CockroachSwarm;
@@ -32,12 +30,11 @@ public class SalesmanPanel extends JPanel {
 	public SalesmanPanel () {
 		this.road = new Road("resources/mapaNiemiec.txt");
 		TravellingSalesman tso = new TravellingSalesman(road);
-		CockroachSwarm tsoCockroach = new CockroachSwarm(100, 4, tso, 1);
-		tsoCockroach.run(500);
+		CockroachSwarm tsoCockroach = new CockroachSwarm(3, 3, tso, 4, false);
+		tsoCockroach.run(10000);
 		road.setOrder(tsoCockroach.getSolution().getPermutation());
 		extremes = road.getExtremes();
-		setPreferredSize(new Dimension(width, height));
-		
+		setPreferredSize(new Dimension(width, height));		
 	}
 	
 	@Override  

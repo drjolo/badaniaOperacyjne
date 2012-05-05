@@ -17,6 +17,7 @@ import pl.edu.agh.bo.Test;
  * @author bblazewicz
  * 
  */
+@SuppressWarnings("unused")
 public class Road {
 	List<Point> points;
 	List<Integer> order;
