@@ -1,0 +1,4 @@
+Nazwa	First[1]	Second[1]
+One	2	1
+Two	2	1
+Three	1	1

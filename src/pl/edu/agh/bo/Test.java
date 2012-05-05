@@ -39,9 +39,9 @@ public class Test extends TestCase {
 		logger.trace("Permutation: " + permutationCopy);
 		permutation.permute();
 		logger.trace("Permutation: " + permutation);
-		permutation.nRStep(1);
+		permutation.nRStep(1, true);
 		logger.trace("Permutation: " + permutation);
-		permutation.nRStep(3);
+		permutation.nRStep(3, true);
 		logger.trace("Permutation: " + permutation);
 		
 		// cocroachSwarm test
