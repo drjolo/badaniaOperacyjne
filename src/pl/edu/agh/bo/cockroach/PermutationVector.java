@@ -106,8 +106,9 @@ public class PermutationVector {
 		return isDifferent;
 	}
 	
-	public void nRStep(int n) {
-		n = (int) Math.floor(Math.random() * n) + 1;
+	public void nRStep(int n, boolean random) {
+		if(random)
+			n = (int) Math.floor(Math.random() * n) + 1;
 		int stochasticX = (int) Math.floor(Math.random() * (permutation.size()));
 		for(int i = 1; i <= n; i++) {
 			
@@ -120,8 +121,9 @@ public class PermutationVector {
 		}
 	}
 	
-	public void localNRStep(int n, int dist) {
-		n = (int) Math.floor(Math.random() * n) + 1;
+	public void localNRStep(int n, int dist, boolean random) {
+		if(random)
+			n = (int) Math.floor(Math.random() * n) + 1;
 		int stochasticX = (int) Math.floor(Math.random() * (permutation.size()));
 		for(int i = 1; i <= n; i++) {
 			int stochasticY = -1;
@@ -146,6 +148,21 @@ public class PermutationVector {
 		permutation = new ArrayList<Integer>();
 		for(Integer i : vector.getPermutation())
 			permutation.add(i);
+	}
+
+	public void rInvert() {
+		int stochasticX = (int) Math.floor(Math.random() * (permutation.size()));
+		int stochasticY = (int) Math.floor(Math.random() * (permutation.size()));
+		int min, max;
+		if(stochasticX < stochasticY) {
+			min = stochasticX; max = stochasticY;
+		} else {
+			max = stochasticX; min = stochasticY;
+		}
+		while (min < max) {
+			this.swap(min, max);
+			min++; max--;
+		}
 	}
 	
 }

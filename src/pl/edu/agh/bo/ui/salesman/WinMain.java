@@ -21,6 +21,7 @@ import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 
 import pl.edu.agh.bo.cockroach.CockroachSwarm;
+import pl.edu.agh.bo.ui.widgets.ScatterPlot;
 import pl.edu.agh.bo.utils.salesman.Extremes;
 import pl.edu.agh.bo.utils.salesman.Point;
 import pl.edu.agh.bo.utils.salesman.Road;
@@ -55,13 +56,14 @@ public class WinMain
         
        //new points
 
-        road = new Road("resources/mapaNiemiec.txt");
+        road = new Road("resources/mapaPolski.txt");
 		TravellingSalesman tso = new TravellingSalesman(road);
-		CockroachSwarm tsoCockroach = new CockroachSwarm(100, 4, tso, 1);
-		tsoCockroach.run(100);
+		CockroachSwarm tsoCockroach = new CockroachSwarm(1, 1, tso, 3, false, true, true, 5, 100);
+		long time = 2 * 1000;
+		tsoCockroach.run(time);
 		road.setOrder(tsoCockroach.getSolution().getPermutation());
       
-		JFrame frame = new JFrame( "Route Path" );
+		JFrame frame = new JFrame("Route Path");
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		AddComponents( frame.getContentPane() );
 		
