@@ -15,12 +15,13 @@ public class Run {
 		SwingUtilities.invokeLater(new Runnable() {
 			public void run()
 			{
-				@SuppressWarnings("unused")
-				UiScheduler ui2 = new UiScheduler();
+			//	@SuppressWarnings("unused")
+			//	UiScheduler ui2 = new UiScheduler();
 				@SuppressWarnings("unused")
 				WinMain win = new WinMain();
 			//	@SuppressWarnings("unused")
 			//	UiSalesman ui = new UiSalesman();
+
 			}
 		});
 	}

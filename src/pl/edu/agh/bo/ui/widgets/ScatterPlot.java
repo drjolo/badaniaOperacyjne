@@ -1,5 +1,6 @@
 package pl.edu.agh.bo.ui.widgets;
 
+
 import java.awt.BasicStroke;
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -41,12 +42,12 @@ import org.jfree.experimental.chart.plot.CombinedXYPlot;
  *		iText-2.1.5.jar
  *		jfreechart-1.0.14-experimental.jar
  *
- *	Biblioteki dodam póŸniej, jak w ogóle ten ScatterPlot bêdzie wykorzystany, bo issue by³ na closed?
+ *	Biblioteki dodam pï¿½niej, jak w ogï¿½le ten ScatterPlot bï¿½dzie wykorzystany, bo issue byï¿½ na closed?
  */
 
 /**
- *	TODO: Na razie generowane s¹ losowe punkty.
- *	TODO: Implementowanie punktów z klasy GraphPoint to nie problem, ale nie wiem czy ma byæ tylko jedna seria danych czy kilka
+ *	TODO: Na razie generowane sï¿½ losowe punkty.
+ *	TODO: Implementowanie punktï¿½w z klasy GraphPoint to nie problem, ale nie wiem czy ma byï¿½ tylko jedna seria danych czy kilka
  */
 
 

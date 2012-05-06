@@ -28,14 +28,13 @@ public class SalesmanPanel extends JPanel {
 	int height = 400;
 	
 	public SalesmanPanel () {
-		this.road = new Road("resources/mapaPolski.txt");
+		this.road = new Road("resources/mapaNiemiec.txt");
 		TravellingSalesman tso = new TravellingSalesman(road);
-		CockroachSwarm tsoCockroach = new CockroachSwarm(100, 4, tso, 1);
-		tsoCockroach.run(100);
+		CockroachSwarm tsoCockroach = new CockroachSwarm(3, 3, tso, 4, false);
+		tsoCockroach.run(10000);
 		road.setOrder(tsoCockroach.getSolution().getPermutation());
 		extremes = road.getExtremes();
-		setPreferredSize(new Dimension(width, height));
-		
+		setPreferredSize(new Dimension(width, height));		
 	}
 	
 	@Override  
