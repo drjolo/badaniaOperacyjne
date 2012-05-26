@@ -29,10 +29,22 @@ Wspomniany algorytm możliwy jest do użycia tylko w wypadku kiedy mamy 2 lub 3 
 
 Algorytm Campbella-Dudka-Smitha
 
-Bazujący na algorytmie Johnsona, pozwala na znalezienie optymalnej kolejności dla więcej niż 3 maszyn. W tym celu konstruuje się n-1 zadań pomocniczych zgodnie z poniższymi wzorami.
+Bazujący na algorytmie Johnsona, pozwala na znalezienie przybliżonej, optymalnej kolejności dla więcej niż 3 maszyn. W tym celu konstruuje się n-1 zadań pomocniczych zgodnie z poniższymi wzorami.
 
 M_{1j}^r = \sum_{\small{i=1}}^{\small{r}} t_{ij}
 M_{2j}^r = \sum_{\small{i=n+1-r}}^{\small{n}} t_{ij}
 
 Wielkość M_{1j}^r odpowiada t_{1,j}, natomiast M_{2j}^r odpowiada t_{2,j} w algorytmie Johnsona. Po wykonaniu wszystkich kroków, wśród przybliżonych rozwiązań szukamy najlepszego metodą przeglądu zupełnego.
 
+Algorytm Browna-Łomnickiego
+
+Jest to algorytm dokładny, oparty o metodę podziału i ograniczeń. Do rozwiązania problemu przydatny jest graf, którego węzłami są indeksy kolejnych wariantów, a krawędzie mają przypisaną wartość max(g^1,g^2,...,g^n), gdzie g^1,g^2,...,g^n są wyliczone zgodnie z poniższym wzorem dla każdego z wariantów w każdym rzędzie
+
+g^1 = T(i,w) + \sum_{\small{j \not\in w}} t_{ij} + \min_{\small{j \not\in w}} \sum_{\small{l=i+1}}^{\small n} t_{lj}
+g^n = T(n,w) + \sum_{\small{j \not\in w}} t_{nj}
+
+I = zbiór numerów wyrobów = {1,2,3,…, m}
+W = dowolny podzbiór I
+T(i,w) = czas wykonania zbioru w na i-tym stanowisku
+
+Analizując przygotowany graf znajdujemy optymalne rozwiązanie problemu harmonogramowania.
