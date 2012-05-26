@@ -25,4 +25,14 @@ Wspomniany algorytm możliwy jest do użycia tylko w wypadku kiedy mamy 2 lub 3 
 
 1) Znajdujemy min t_{i,j}
 2) Jeżeli min t_{i,j} = t_{1,k} to optymalna kolejność musi się rozpocząć od obróbki detalu o indeksie k natomiast jeżeli min t_{i,j} = t_{2,s} to musi zakończyć się detalem o indeksie s
-3) Wykreślamy z powyższej macierzy czasów, komunę i ze znalezionym w drugim kroku minimum oraz wracamy do pierwszego kroku zakładając że znaleziony min t_{i,j} ustawia się w pierwszym wolnym miejscu, odpowiednio od końca lub początku.
+3) Wykreślamy z powyższej macierzy czasów, kolumnę i ze znalezionym w drugim kroku minimum oraz wracamy do pierwszego kroku zakładając że znaleziony min t_{i,j} ustawia się w pierwszym wolnym miejscu, odpowiednio od końca lub początku.
+
+Algorytm Campbella-Dudka-Smitha
+
+Bazujący na algorytmie Johnsona, pozwala na znalezienie optymalnej kolejności dla więcej niż 3 maszyn. W tym celu konstruuje się n-1 zadań pomocniczych zgodnie z poniższymi wzorami.
+
+M_{1j}^r = \sum_{\small{i=1}}^{\small{r}} t_{ij}
+M_{2j}^r = \sum_{\small{i=n+1-r}}^{\small{n}} t_{ij}
+
+Wielkość M_{1j}^r odpowiada t_{1,j}, natomiast M_{2j}^r odpowiada t_{2,j} w algorytmie Johnsona. Po wykonaniu wszystkich kroków, wśród przybliżonych rozwiązań szukamy najlepszego metodą przeglądu zupełnego.
+
